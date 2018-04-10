@@ -12,10 +12,6 @@ class Controller
     public static function load_method($controller_name, $method, $params)
     {
         $controller_name = ucfirst($controller_name);
-        if(!in_array($controller_name.".php", Registry::get('controllers')))
-        {
-            die('Controller "' . $controller . '" not found');
-        }
         require_once ROOT . APP . CONTROLLERS . $controller_name . '.php';
         $controller = new $controller_name();
         if(method_exists($controller_name, "initstatic"))

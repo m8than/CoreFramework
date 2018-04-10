@@ -1,4 +1,4 @@
-{{$cur_page}}
+{{$cur_page}}<br />
 
 {{
 //you can put any php here 
@@ -6,13 +6,13 @@
 }}
 
 {{ switch($cur_page) }}
-  {{ case "home" }}
+{{ case "home" }}
     Switch case example
-  {{ /case }}
+{{ /case }}
 {{ /switch}}
 
 {{ foreach($items as $item) }}
 
-The item is {{ $item }}
+The item is {{ $item }} <br />
 
 {{ /foreach }}
