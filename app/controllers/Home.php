@@ -6,6 +6,7 @@ class Home extends Controller
     {
         $this->setView('home.tpl');
     	$this->setViewData('cur_page', $page);
+        $this->setViewData('items', array('item1', 'item2', 'item3'));
     	return;
     }
 }
