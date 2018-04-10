@@ -1,8 +1,4 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 DEFINE('ROOT', __DIR__.'/');
 DEFINE('APP','app/');
 DEFINE('CONTROLLERS','controllers/');
@@ -14,10 +10,6 @@ DEFINE('H','helpers/');
 
 session_start();
 require_once ROOT.'registry.php';
-
-//Load all php file locations
-Registry::set('controllers', preg_grep('/^([^.])/', scandir(ROOT . APP . CONTROLLERS)));
-Registry::set('models', preg_grep('/^([^.])/', scandir(ROOT . APP . MODELS)));
 
 require_once ROOT . APP . 'controller.php';
 require_once ROOT . APP . 'model.php';
@@ -31,7 +23,7 @@ foreach($confighelperfiles as $file)
     include_once $file;
 }
 
-//Load Classes
+//Load Config/Helper Classes
 foreach($confighelperfiles as $file)
 {
     $loaded_file = basename($file);
