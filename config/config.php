@@ -1,5 +1,4 @@
 <?php
-
 $db_config = array
 (
     "DB_HOST" => "localhost",
