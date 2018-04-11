@@ -50,7 +50,7 @@ class Router
                     //uripart = routepart
                     continue;
                 }
-                else if($input_validation = self::validate_input($route_split[$j], $cur_uri_split[$j]))
+                else if($input_validation = self::validateInput($route_split[$j], $cur_uri_split[$j]))
                 {
                     $params[] = $input_validation;
                     continue;
@@ -71,11 +71,11 @@ class Router
                 {
                     Router::redirect(Registry::get('config')['URL'] . '/' . $redirectCheck[1]);
                 }
-                return Controller::load_method(self::$_routes[$i]['controller'], self::$_routes[$i]['method'], $params);
+                return Controller::loadMethod(self::$_routes[$i]['controller'], self::$_routes[$i]['method'], $params);
             }
         }        
     }
-    private static function validate_input($key, $subject)
+    private static function validateInput($key, $subject)
     {
         switch($key)
         {
