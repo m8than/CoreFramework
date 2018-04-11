@@ -62,7 +62,7 @@ class Template
         $data = preg_replace("/{{\s*(while\s*\(.*\))\s*}}/i", '{{$1:}}', $data);
         $data = preg_replace("/{{\s*\/while\s*}}/i", '{{endwhile;}}', $data);
                 
-        $data = preg_replace("/{{\s*(\\$[a-zA-Z\[\]\'\_]*)\s*}}/i", '{{=$1}}', $data);
+        $data = preg_replace("/{{\s*(\\$[a-zA-Z\[\]\'\_\$]*)\s*}}/i", '{{=$1}}', $data);
         
         $data = str_replace("{{=", "<?=", $data);
         $data = str_replace("{{", "<?php ", $data);
