@@ -2,7 +2,7 @@
 
 //Model::load('User'); //Loads the user model
 
-Router::add('GET','/','Home','All');
+Router::add('GET','','Home','All');
 Router::add('GET','{*}','Home','All');
 
 /*
