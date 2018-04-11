@@ -3,10 +3,9 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require_once "../global.php";
+require_once '../global.php';
 
-
-$db_config = Registry::get('db_config');
+//$db_config = Registry::get('db_config');
 //set DB object
 /*Registry::set('db', new Database($db_config['DB_HOST'], $db_config['DB_NAME'],
                                 $db_config['DB_USER'], $db_config['DB_PASS'],
