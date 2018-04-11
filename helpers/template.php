@@ -121,6 +121,6 @@ class Template
         {
             ${$key} = $value;
         }
-        require self::get_cache();
+        require self::getCache();
     }        
 }
