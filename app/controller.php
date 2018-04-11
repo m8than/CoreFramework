@@ -9,7 +9,7 @@ class Controller
     {
         
     }
-    public static function load_method($controller_name, $method, $params)
+    public static function loadMethod($controller_name, $method, $params)
     {
         $controller_name = ucfirst($controller_name);
         require_once ROOT . APP . CONTROLLERS . $controller_name . '.php';
