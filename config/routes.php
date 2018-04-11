@@ -1,4 +1,5 @@
 <?php
+
 //Model::load('User'); //Loads the user model
 
 Router::add('GET','/','Home','All');
