@@ -7,7 +7,7 @@ class User extends Model
         //Model::load('Package');
         parent::__construct($id, $table, $column);
     }
-    public static function isLoggedIn()
+    public static function is_logged_in()
     {
         return isset($_SESSION['user_id']);
     }
