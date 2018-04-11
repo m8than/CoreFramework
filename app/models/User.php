@@ -7,11 +7,11 @@ class User extends Model
         //Model::load('Package');
         parent::__construct($id, $table, $column);
     }
-    public static function is_logged_in()
+    public static function isLoggedIn()
     {
         return isset($_SESSION['user_id']);
     }
-    public static function username2id($usernameoremail)
+    public static function usernameToId($usernameoremail)
     {
         $db = Registry::get('db');
         return $db->selectCol('Users','username = :username OR email = :username', array(':username'=>$usernameoremail) , 'id');
