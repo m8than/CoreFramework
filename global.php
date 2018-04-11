@@ -9,11 +9,10 @@ DEFINE('C','config/');
 DEFINE('H','helpers/');
 
 session_start();
-require_once ROOT.'registry.php';
 
+require_once ROOT.'registry.php';
 require_once ROOT . APP . 'controller.php';
 require_once ROOT . APP . 'model.php';
-
 require_once ROOT.'router.php';
 
 //Load Files
