@@ -10,30 +10,15 @@ DEFINE('H','helpers/');
 
 session_start();
 
-require_once ROOT.'registry.php';
+require_once ROOT . 'registry.php';
 require_once ROOT . APP . 'controller.php';
 require_once ROOT . APP . 'model.php';
-require_once ROOT.'router.php';
+require_once ROOT . 'router.php';
 
-//Load Files
-$confighelperfiles = array_merge(glob(ROOT.C.'*.php'), glob(ROOT.H.'*.php'));
-foreach($confighelperfiles as $file)
-{
-    include_once $file;
-}
+require_once ROOT . C . 'config.php';
+require_once ROOT . C . 'routes.php';
 
-//Load Config/Helper Classes
-foreach($confighelperfiles as $file)
-{
-    $loaded_file = basename($file);
-    $class_name = ucfirst(substr($loaded_file, 0, -4));
-    if(method_exists($class_name, 'initstatic'))
-    {
-       $class_name::initstatic();
-    }
-    else
-    {
-        Registry::add('warnings', ucfirst($class_name) . '::initstatic() doesn\'t exist');
-    }
-}
+require_once ROOT . H . 'database.php';
+require_once ROOT . H . 'general.php';
+require_once ROOT . H . 'template.php';
 ?>
