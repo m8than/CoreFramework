@@ -33,7 +33,7 @@ class Template
             for($i=0;$i<count($includes[0]);$i++)
             {
                 $src = file_get_contents(ROOT . APP . VIEWS . $includes[3][$i]);                
-                $toreplace[$includes[0][$i]] = $includes[1][$i] . ' Template::get_cache("'.$includes[3][$i].'");';                
+                $toreplace[$includes[0][$i]] = $includes[1][$i] . ' Template::getCache("'.$includes[3][$i].'");';                
                 self::dynamic_replacements($src);
             }
         }
@@ -75,9 +75,9 @@ class Template
         $config = Registry::get('config');
         $cur_route = Registry::get('cur_route');
         $view_hash = hash('sha1', $tpl_path);
-        return sprintf( ROOT.'%s/%s/%s_%s.php',$config['template_cache_dir'],$cur_route['controller'],$cur_route['method'],$view_hash);
+        return sprintf( ROOT . '%s/%s/%s_%s.php', $config['template_cache_dir'],$cur_route['controller'],$cur_route['method'],$view_hash);
     }
-    public static function get_cache($tpl_path = false)
+    public static function getCache($tpl_path = false)
     {        
         $tpl_path = $tpl_path ? $tpl_path : self::$_viewfile;
         $cache_path = self::getCachePath($tpl_path);
