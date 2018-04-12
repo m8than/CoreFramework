@@ -118,6 +118,7 @@ class Template
     }
     public static function output()
     {
+        if(!isset(self::$_viewfile)) return;
         foreach(self::$_viewdata as $key => $value)
         {
             ${$key} = $value;
