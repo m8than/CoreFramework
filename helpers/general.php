@@ -1,11 +1,11 @@
 <?php
 class General
 {
-    public static function contains($needle, $haystack)
+    public static function Contains($needle, $haystack)
     {
         return strpos($haystack, $needle) !== false;
     }
-    public static function reg_contains($needle, $haystack)
+    public static function regContains($needle, $haystack)
     {
         preg_match_all($needle, $haystack, $matches);
         return (bool)count($matches[0]);

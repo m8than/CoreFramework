@@ -75,7 +75,7 @@ class Template
         $config = Registry::get('config');
         $cur_route = Registry::get('cur_route');
         $view_hash = hash('sha1', $tpl_path);
-        return sprintf( ROOT . '%s/%s/%s_%s.php', $config['template_cache_dir'],$cur_route['controller'],$cur_route['method'],$view_hash);
+        return sprintf( ROOT . '%s/%s/%s_%s.php', $config['template_cache_dir'], $cur_route['controller'], $cur_route['method'], $view_hash);
     }
     public static function getCache($tpl_path = false)
     {        
@@ -105,7 +105,8 @@ class Template
         {
             $data_finaltemplate = file_get_contents(ROOT . APP . VIEWS . $tpl_path);
             $data_finaltemplate = self::dynamic_replacements($data_finaltemplate);
-            $data_finaltemplate = self::replacements($data_finaltemplate);            
+            $data_finaltemplate = self::replacements($data_finaltemplate);
+            $data_finaltemplate = '<?php if(!defined(\'CORE_SECURE\')) { die(); } ?>'.$data_finaltemplate;
             if (!is_dir(dirname($cache_path)))
             {
                 mkdir(dirname($cache_path), 777, true);
