@@ -1,6 +1,9 @@
 <?php
+DEFINE('CORE_SECURE', true);
 DEFINE('ROOT', __DIR__.'/');
+
 DEFINE('APP','app/');
+
 DEFINE('CONTROLLERS','controllers/');
 DEFINE('MODELS','models/');
 DEFINE('VIEWS','views/');
@@ -23,8 +26,8 @@ require_once ROOT . H . 'database.php';
 require_once ROOT . H . 'general.php';
 require_once ROOT . H . 'template.php';
 
-$db_config = Registry::get('db_config');
-Registry::set('db', new Database($db_config['DB_HOST'], $db_config['DB_NAME'],
-                                $db_config['DB_USER'], $db_config['DB_PASS'],
-                                $db_config['DB_PREFIX']));
+//$db_config = Registry::get('db_config');
+//Registry::set('db', new Database($db_config['DB_HOST'], $db_config['DB_NAME'],
+//                                $db_config['DB_USER'], $db_config['DB_PASS'],
+//                                $db_config['DB_PREFIX']));
 ?>

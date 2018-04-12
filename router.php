@@ -15,12 +15,12 @@ class Router
         );
         self::$_index++;
     }
-    public static function prepare()
+    public static function prepare(&$path_var)
     {
-        $uri = isset($_GET['uri']) ? $_GET['uri'] : '';
+        $uri = isset($path_var) ? $path_var : '';
         $uri = ltrim($uri, '/');
 	
-        unset($_GET['uri']);
+        unset($path_var);
                 
         Registry::set('uri', $uri);
         Registry::set('request_method', $_SERVER['REQUEST_METHOD']);
