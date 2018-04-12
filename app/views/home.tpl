@@ -9,7 +9,7 @@
 {{ case "home" }}
     Switch case example
 {{ /case }}
-{{ /switch}}
+{{ /switch }}
 
 {{ foreach($items as $item) }}
 
