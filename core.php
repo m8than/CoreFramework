@@ -13,18 +13,22 @@ DEFINE('H','helpers/');
 
 session_start();
 
+
+//Essentials 
 require_once ROOT . 'registry.php';
+require_once ROOT . 'database.php';
 require_once ROOT . 'router.php';
+require_once ROOT . 'template.php';
 
 require_once ROOT . APP . 'controller.php';
 require_once ROOT . APP . 'model.php';
 
+//Config
 require_once ROOT . C . 'config.php';
 require_once ROOT . C . 'routes.php';
 
-require_once ROOT . H . 'database.php';
+//Helpers
 require_once ROOT . H . 'general.php';
-require_once ROOT . H . 'template.php';
 
 //$db_config = Registry::get('db_config');
 //Registry::set('db', new Database($db_config['DB_HOST'], $db_config['DB_NAME'],

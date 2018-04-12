@@ -1,4 +1,5 @@
 <?php
+
 class General
 {
     public static function Contains($needle, $haystack)

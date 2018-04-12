@@ -1,4 +1,5 @@
 <?php
+
 class Router
 {
     private static $_index = 0;
