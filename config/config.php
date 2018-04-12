@@ -16,7 +16,7 @@ $config = array
     "description" => "CoreFramework is a simple MVC framework built for speed",
     "author" => "Nathan Wilce",
 
-    "template_cache_dir" => "helpers/template_cache"
+    "template_cache_dir" => "template_cache"
 );
 Registry::set("db_config", $db_config);
 Registry::set("config", $config);
