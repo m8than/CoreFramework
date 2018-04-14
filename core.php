@@ -1,6 +1,6 @@
 <?php
 DEFINE('CORE_SECURE', true);
-DEFINE('ROOT', __DIR__.'/');
+DEFINE('ROOT', dirname(__FILE__).'/');
 
 DEFINE('APP','app/');
 
