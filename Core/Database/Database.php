@@ -11,12 +11,12 @@ class Database
         $this->_prefix = $prefix;
     }
     
-    public function insert($table, $info)
+    public function insert($table, $params)
     {
         $table = $this->_prefix . $table;
-        $fields = implode(", ", array_keys($info));
+        $fields = implode(", ", array_keys($params));
         
-        $values = ":".implode(", :", array_keys($info));
+        $values = ":".implode(", :", array_keys($params));
         $stmt = $this->_db->prepare("INSERT INTO {$table} ({$fields}) VALUES ({$values})");
         
         foreach($info as $key=>$value)
@@ -143,7 +143,7 @@ class Database
             return $errors[2];
         }
     }
-    public function update($table, $info, $where="", $bind="")
+    public function update($table, $params, $where="", $bind="")
     {
         $table = $this->_prefix . $table;
         
@@ -153,7 +153,7 @@ class Database
             $wherestr = "WHERE ".$where;
         
         $fields = array();
-        foreach($info as $key=>$value)
+        foreach($params as $key=>$value)
         {
             $fields[] = $key."=:GENERATED".$key;
         }
