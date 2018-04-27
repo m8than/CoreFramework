@@ -1,2 +1,2 @@
 # CoreFramework
-Simple MVC framework
+Moved to https://gitlab.com/nathanwilce/Core
