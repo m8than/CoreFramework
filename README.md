@@ -1,2 +1,2 @@
 # CoreFramework
-Moved to https://gitlab.com/nathanwilce/Core
+Moved to https://gitlab.com/core-sites/Core
